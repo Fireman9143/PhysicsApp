@@ -1,0 +1,869 @@
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+
+MyScreenManager:
+    MainScreen:
+    VertForce:
+    HorzForce:
+    Fsqrt:
+    Theta:
+    Polar:
+    Density:
+    Temps:
+    Ave_Vel:
+    Ave_Acc:
+
+<MainScreen>:
+    name: "Main"
+    ScrollView:
+        do_scroll_x:False
+        do_scroll_y:True
+        size_hint:(None, None)
+        size: (root.width, root.height)
+        bar_width:5
+        scroll_type:['bars', 'content']
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height
+            Button:
+                text:"Fy = Fsin(theta)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0, 0)
+                bold:True
+                on_release: app.root.current="VertForce"
+            Button:
+                text:"Fx = Fcos(theta)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 1, 0)
+                bold:True
+                on_release: app.root.current="HorzForce"
+            Button:
+                text:"F = sqrt(Fx^2 + Fy^2)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 0.3, 1)
+                bold:True
+                on_release: app.root.current="Fsqrt"
+            Button:
+                text:"Theta = arctan(Fy/Fx)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0.5, 0.5)
+                bold:True
+                on_release: app.root.current = "Theta"
+            Button:
+                text:"Polar = (Fx)i + (Fy)j"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0, 0)
+                bold:True
+                on_release: app.root.current = "Polar"
+            Button:
+                text:"Density = m/v"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 1, 0)
+                bold:True
+                on_release: app.root.current = "Density"
+            Button:
+                text:"Temperatures C/K/F"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 0.3, 1)
+                bold:True
+                on_release: app.root.current = "Temps"
+            Button:
+                text:"Vav = (X2 - X1) / (t2 - t1)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 1, 0)
+                bold:True
+                on_release: app.root.current = "Ave_Vel"
+            Button:
+                text:"Aav = (V2 - V1) / (t2 - t1)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 0.3, 1)
+                bold:True
+                on_release: app.root.current = "Ave_Acc"
+            Button:
+                text:"Fs = us(Fn)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0.5, 0.5)
+                bold:True
+            Button:
+                text:"Sigma(M) = (clockwise F*D) - (counterclockwise F*D)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0, 0)
+                bold:True
+            Button:
+                text:"Torque = F*D = FLsin(theta)"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 1, 0)
+                bold:True
+            Button:
+                text:"F = ma"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 0.3, 1)
+                bold:True
+            Button:
+                text:"w = mg"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0.5, 0.5)
+                bold:True
+            Button:
+                text:"work = F * D"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0, 0)
+                bold:True
+            Button:
+                text:"MA = Force Out / Force In"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 1, 0)
+                bold:True
+            Button:
+                text:"Fcos(theta) = ma"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 0.3, 1)
+                bold:True
+            Button:
+                text:"Fsin(theta) = ma"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0.5, 0.5)
+                bold:True
+            Button:
+                text:"Change X = Vot + 1/2 at^2"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0, 0)
+                bold:True
+            Button:
+                text:"v(t) = Vo + at"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 1, 0)
+                bold:True
+            Button:
+                text:"Q = mc deltaT"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(0, 0.3, 1)
+                bold:True
+            Button:
+                text:"F deltaT = delta mv"
+                font_size: root.text_size
+                size_hint:(1, None)
+                height: root.box_height
+                color:(1, 0.5, 0.5)
+                bold:True
+        
+
+<VertForce>:
+    name: "VertForce"
+    BoxLayout:
+        id: mainBox
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            size_hint: (1, 0.75)
+            Label:
+                text:"Fy"
+                size_hint: (0.3, 1)
+                bold:True
+            TextInput:
+                id: vertical_force_y
+                size_hint: (0.7, 1)
+                multiline:False
+                text: ""
+            Label:
+                text:"Force"
+                size_hint: (0.3, 1)
+                bold:True
+            TextInput:
+                id: vertical_force
+                size_hint: (0.7, 1)
+                multiline:False
+                text: ""
+            BoxLayout:
+                Label:
+                    text:"sin(theta)"
+                    size_hint: (0.3, 1)
+                    bold:True
+                TextInput:
+                    id: vertical_force_sin_angle
+                    size_hint: (0.7, 1)
+                    multiline:False
+                    text: ""
+            BoxLayout:
+                Label:
+                    text:"theta"
+                    size_hint: (0.3, 1)
+                    bold:True
+                TextInput:
+                    id: vertical_force_angle
+                    size_hint: (0.7, 1)
+                    multiline:False
+                    text: ""
+        Label:
+            text: "Fy=F(sin Theta)"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: "submit"
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: 
+                root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: "main"
+                text: "Back"
+                color: (1, 1, 1)
+                on_release: 
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release:
+                    root.reset()
+                
+<HorzForce>:
+    name: "HorzForce"
+
+    BoxLayout:
+        id: mainBox
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            size_hint: (1, 0.75)
+            Label:
+                text:"Fx"
+                size_hint: (0.3, 1)
+                bold:True
+            TextInput:
+                id: horz_force_x
+                size_hint: (0.7, 1)
+                multiline:False
+                text: ""
+            Label:
+                text:"Force"
+                size_hint: (0.3, 1)
+                bold:True
+            TextInput:
+                id: horz_force
+                size_hint: (0.7, 1)
+                multiline:False
+                text: ""
+            BoxLayout:
+                Label:
+                    text:"cos(theta)"
+                    size_hint: (0.3, 1)
+                    bold:True
+                TextInput:
+                    id: horz_force_cos_angle
+                    size_hint: (0.7, 1)
+                    multiline:False
+                    text: ""
+            BoxLayout:
+                Label:
+                    text:"theta"
+                    size_hint: (0.3, 1)
+                    bold:True
+                TextInput:
+                    id: horz_force_angle
+                    size_hint: (0.7, 1)
+                    multiline:False
+                    text: ""
+        Label:
+            text: "Fx = F (cos Theta)"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: "submit"
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: 
+                root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: "main"
+                text: "Back"
+                color: (1, 1, 1)
+                on_release: 
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release:
+                    root.reset()
+
+<Fsqrt>:
+    name: "Fsqrt"
+
+    BoxLayout:
+        id: Fsqrt
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            Label:
+                text: "Force"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: Force
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "Fx"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: Fx
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "Fy"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: Fy
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Label:
+            text: "F = sqrt(Fx^2 + Fy^2)"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: "submit"
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: 
+                root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: "main"
+                text: "Back"
+                color: (1, 1, 1)
+                on_release: 
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release:
+                    root.reset()
+
+<Theta>
+    name: "Theta"
+
+    BoxLayout:
+        id: Theta
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            Label:
+                text: "ANGLE"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: angle
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "sin angle"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: sin_angle
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "cos angle"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: cos_angle
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Label:
+            text: "angle = arctan(sin/cos)"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: "submit"
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: 
+                root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: "main"
+                text: "Back"
+                color: (1, 1, 1)
+                on_release: 
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release:
+                    root.reset()
+
+<Polar>
+    name: "Polar"
+
+    BoxLayout:
+        id: Polar
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            Label:
+                text: "Vector = mag @ deg"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: vector_value
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "i value"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: i_value
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "j value"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: j_value
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Label:
+            text: "Polar vector = (x) i + (y) j"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: "submit"
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: 
+                root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: "main"
+                text: "Back"
+                color: (1, 1, 1)
+                on_release: 
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release:
+                    root.reset()
+
+<Density>:
+    name: "Density"
+
+    BoxLayout:
+        id: Density
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            Label:
+                text: "Density (kg/m^3)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: density
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "mass (kg)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: mass
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "volume (m^3)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: volume
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Label:
+            text: "Density = mass / volume"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: "submit"
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: 
+                root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: "main"
+                text: "Back"
+                color: (1, 1, 1)
+                on_release: 
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release:
+                    root.reset()
+
+<Temps>:
+    name: "Temps"
+
+    BoxLayout:
+        id: Temps
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 3
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: (0.3, 1)
+                Label: 
+                    text: "Tf (farenheit)"
+                    bold: True
+                Label:
+                    text: "Tf = 9/5(Tc) + 32"
+                    multiline: False
+                    text: "0"
+            TextInput:
+                id: temp_f
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: (0.3, 1)
+                Label: 
+                    text: "Tc (celsius)"
+                    bold: True
+                Label:
+                    text: "Tc = Tk - 273 = 5/9(Tf - 32)"
+                    multiline: False
+                    text: "0"
+            TextInput:
+                id: temp_c
+                size_hint: (0.7, 1)
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: (0.3, 1)
+                Label: 
+                    text: "Tk (kelvin)"
+                    bold: True
+                Label:
+                    text: "Tk = Tc + 273"
+                    multiline: False
+                    text: "0"
+            TextInput:
+                id: temp_k
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Button:
+            id: submit
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: main
+                text: "Back"
+                color: (1, 1, 1)
+                on_release:
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release: root.reset()
+
+<Ave_Vel>:
+    name: "Ave_Vel"
+
+    BoxLayout:
+        id: Ave_Vel
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 5
+            Label: 
+                text: "Ave_Vel"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: ave_vel
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "X2 (meters)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: dist_x2
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "X1 (meters)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: dist_x1
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "t2 (seonds)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: time2
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "t1 (seconds)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: time1
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Label:
+            text: "Vavg = (X2 - X1) / (t2 - t1)"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: submit
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: main
+                text: "Back"
+                color: (1, 1, 1)
+                on_release:
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release: root.reset()
+
+<Ave_Acc>:
+    name: "Ave_Acc"
+
+    BoxLayout:
+        id: Ave_Acc
+        orientation: "vertical"
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+            rows: 5
+            Label: 
+                text: "Ave_Acc"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: ave_acc
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "V2 (meters/sec)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: vel2
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "V1 (meters/sec)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: vel1
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "t2 (seonds)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: time2
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+            Label:
+                text: "t1 (seconds)"
+                size_hint: (0.3, 1)
+                bold: True
+            TextInput:
+                id: time1
+                size_hint: (0.7, 1)
+                multiline: False
+                text: ""
+        Label:
+            text: "a(avg) = (V2 - V1) / (t2 - t1)"
+            size_hint_y: None
+            font_size: "32dp"
+            height: "50dp"
+        Button:
+            id: submit
+            text: "Submit"
+            size_hint_y: None
+            height: "50dp"
+            color: (1, 1, 1)
+            on_release: root.calculate()
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "50dp"
+            Button:
+                id: main
+                text: "Back"
+                color: (1, 1, 1)
+                on_release:
+                    root.manager.transition = SlideTransition(direction='right')
+                    app.root.current = "Main"
+            Button:
+                id: reset
+                text: "RESET"
+                color: (1, 1, 1)
+                on_release: root.reset()
+
